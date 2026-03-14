@@ -1,0 +1,14 @@
+import Stripe from "stripe";
+
+// Lazy singleton — initialized on first call so Next.js build-time
+// module evaluation never runs this code (no env vars needed at build).
+let _stripe: Stripe | null = null;
+
+export function getStripe(): Stripe {
+  if (!_stripe) {
+    const key = process.env.STRIPE_SECRET_KEY;
+    if (!key) throw new Error("Missing STRIPE_SECRET_KEY environment variable");
+    _stripe = new Stripe(key, { typescript: true });
+  }
+  return _stripe;
+}

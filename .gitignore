@@ -1,4 +1,7 @@
+# Environment files — never commit secrets
 .env
+.env.local
+web/.env.local
 
 # Logs
 *.log
@@ -6,5 +9,14 @@
 # Python
 __pycache__/
 *.pyc
+
+# IDE
+.idea/
+
+# Next.js build output
+web/.next/
+web/out/
+web/node_modules/
+
+# Misc
 *.pdf
-*.md
