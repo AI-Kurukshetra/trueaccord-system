@@ -2,51 +2,59 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 px-6 py-12 font-sans dark:bg-black">
-      <main className="w-full max-w-xl rounded-2xl border border-zinc-200 bg-white p-8 shadow-sm dark:border-zinc-800 dark:bg-zinc-950">
-        <h1 className="text-2xl font-semibold tracking-tight text-zinc-950 dark:text-zinc-50">
-          AI Debt Recovery Platform
-        </h1>
-        <p className="mt-2 text-sm leading-6 text-zinc-600 dark:text-zinc-300">
-          Phase 2: Debtor &amp; Account Management. Role-based dashboards for Admin, Agent, Client, and Debtor.
+    <div className="flex min-h-screen items-center justify-center bg-black px-6 py-12 font-sans">
+      <main className="w-full max-w-lg">
+        {/* Logo / Brand */}
+        <div className="mb-10 text-center">
+          <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-white">
+            <svg className="h-7 w-7 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h1 className="text-3xl font-bold tracking-tight text-white">
+            DebtPilot
+          </h1>
+          <p className="mt-3 text-base text-zinc-400">
+            Intelligent collections. Smarter recovery.
+          </p>
+        </div>
+
+        {/* Auth card */}
+        <div className="rounded-2xl border border-zinc-800 bg-zinc-950 p-8">
+          <div className="space-y-3">
+            <Link
+              href="/login"
+              className="flex h-11 w-full items-center justify-center rounded-lg bg-white text-sm font-semibold text-black hover:bg-zinc-100 transition-colors"
+            >
+              Log in
+            </Link>
+            <Link
+              href="/signup"
+              className="flex h-11 w-full items-center justify-center rounded-lg border border-zinc-700 text-sm font-medium text-zinc-200 hover:bg-zinc-900 transition-colors"
+            >
+              Create account
+            </Link>
+          </div>
+
+          <div className="mt-6 grid grid-cols-3 gap-3 border-t border-zinc-800 pt-6 text-center">
+            <div>
+              <p className="text-lg font-semibold text-white">4</p>
+              <p className="text-xs text-zinc-500">User roles</p>
+            </div>
+            <div>
+              <p className="text-lg font-semibold text-white">Stripe</p>
+              <p className="text-xs text-zinc-500">Payments</p>
+            </div>
+            <div>
+              <p className="text-lg font-semibold text-white">AI</p>
+              <p className="text-xs text-zinc-500">Powered</p>
+            </div>
+          </div>
+        </div>
+
+        <p className="mt-6 text-center text-xs text-zinc-600">
+          © {new Date().getFullYear()} DebtPilot. All rights reserved.
         </p>
-
-        <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-          <Link
-            className="inline-flex h-10 items-center justify-center rounded-md bg-zinc-900 px-4 text-sm font-medium text-white hover:bg-zinc-800 dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-zinc-200"
-            href="/login"
-          >
-            Log in
-          </Link>
-          <Link
-            className="inline-flex h-10 items-center justify-center rounded-md border border-zinc-200 px-4 text-sm font-medium text-zinc-900 hover:bg-zinc-50 dark:border-zinc-800 dark:text-zinc-50 dark:hover:bg-zinc-900"
-            href="/signup"
-          >
-            Create account
-          </Link>
-          <Link
-            className="inline-flex h-10 items-center justify-center rounded-md border border-zinc-200 px-4 text-sm font-medium text-zinc-900 hover:bg-zinc-50 dark:border-zinc-800 dark:text-zinc-50 dark:hover:bg-zinc-900"
-            href="/dashboard"
-          >
-            Dashboard
-          </Link>
-        </div>
-
-        <div className="mt-8 rounded-lg bg-zinc-50 p-4 text-xs text-zinc-700 dark:bg-black/40 dark:text-zinc-300">
-          <p className="font-medium">Phase 2 — complete</p>
-          <ul className="mt-2 list-inside list-disc space-y-1">
-            <li>Debtors CRUD + search + CSV import</li>
-            <li>Accounts management (per debtor)</li>
-            <li>Clients (creditors) management</li>
-            <li>Role-based dashboards: Admin / Agent / Client / Debtor</li>
-          </ul>
-          <p className="mt-3 font-medium">Phase 3 — next</p>
-          <ul className="mt-2 list-inside list-disc space-y-1">
-            <li>Payment processing (Stripe)</li>
-            <li>Payment plans + installments</li>
-            <li>Settlement offers</li>
-          </ul>
-        </div>
       </main>
     </div>
   );

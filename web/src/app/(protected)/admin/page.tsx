@@ -28,9 +28,9 @@ export default async function AdminPage() {
   return (
     <div className="space-y-8">
       <div>
-        <h1 className="text-2xl font-semibold text-zinc-950 dark:text-zinc-50">Overview</h1>
+        <h1 className="text-2xl font-bold text-zinc-950 dark:text-zinc-50">Overview</h1>
         <p className="mt-1 text-sm text-zinc-500 dark:text-zinc-400">
-          Platform summary — Phase 2
+          Platform summary at a glance.
         </p>
       </div>
 
@@ -39,55 +39,60 @@ export default async function AdminPage() {
           <Link
             key={card.label}
             href={card.href}
-            className="rounded-xl border border-zinc-200 bg-white p-5 shadow-sm hover:border-zinc-300 dark:border-zinc-800 dark:bg-zinc-950 dark:hover:border-zinc-700"
+            className="rounded-xl border border-zinc-200 bg-white p-5 shadow-sm hover:border-zinc-300 hover:shadow-md transition-all dark:border-zinc-800 dark:bg-zinc-950 dark:hover:border-zinc-700"
           >
             <p className="text-xs font-medium uppercase tracking-wide text-zinc-500 dark:text-zinc-400">
               {card.label}
             </p>
-            <p className="mt-2 text-2xl font-semibold text-zinc-900 dark:text-zinc-50">
+            <p className="mt-2 text-2xl font-bold text-zinc-900 dark:text-zinc-50">
               {card.value}
             </p>
           </Link>
         ))}
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-3">
-        <Link
-          href="/admin/debtors/new"
-          className="flex items-center gap-3 rounded-xl border border-zinc-200 bg-white p-5 shadow-sm hover:border-zinc-300 dark:border-zinc-800 dark:bg-zinc-950"
-        >
-          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-zinc-100 text-lg dark:bg-zinc-800">
-            +
-          </span>
-          <div>
-            <p className="text-sm font-medium text-zinc-900 dark:text-zinc-50">Add Debtor</p>
-            <p className="text-xs text-zinc-500 dark:text-zinc-400">Create a new debtor profile</p>
-          </div>
-        </Link>
-        <Link
-          href="/admin/clients/new"
-          className="flex items-center gap-3 rounded-xl border border-zinc-200 bg-white p-5 shadow-sm hover:border-zinc-300 dark:border-zinc-800 dark:bg-zinc-950"
-        >
-          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-zinc-100 text-lg dark:bg-zinc-800">
-            +
-          </span>
-          <div>
-            <p className="text-sm font-medium text-zinc-900 dark:text-zinc-50">Add Client</p>
-            <p className="text-xs text-zinc-500 dark:text-zinc-400">Onboard a new creditor</p>
-          </div>
-        </Link>
-        <Link
-          href="/admin/import"
-          className="flex items-center gap-3 rounded-xl border border-zinc-200 bg-white p-5 shadow-sm hover:border-zinc-300 dark:border-zinc-800 dark:bg-zinc-950"
-        >
-          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-zinc-100 text-lg dark:bg-zinc-800">
-            ↑
-          </span>
-          <div>
-            <p className="text-sm font-medium text-zinc-900 dark:text-zinc-50">Import CSV</p>
-            <p className="text-xs text-zinc-500 dark:text-zinc-400">Bulk import debt portfolios</p>
-          </div>
-        </Link>
+      <div>
+        <h2 className="mb-4 text-sm font-semibold text-zinc-500 dark:text-zinc-400 uppercase tracking-wide">
+          Quick actions
+        </h2>
+        <div className="grid gap-4 sm:grid-cols-3">
+          <Link
+            href="/admin/debtors/new"
+            className="flex items-center gap-3 rounded-xl border border-zinc-200 bg-white p-5 shadow-sm hover:border-zinc-300 hover:shadow-md transition-all dark:border-zinc-800 dark:bg-zinc-950"
+          >
+            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-zinc-900 text-white text-lg dark:bg-zinc-100 dark:text-zinc-900">
+              +
+            </span>
+            <div>
+              <p className="text-sm font-semibold text-zinc-900 dark:text-zinc-50">Add Debtor</p>
+              <p className="text-xs text-zinc-500 dark:text-zinc-400">Create a new debtor profile</p>
+            </div>
+          </Link>
+          <Link
+            href="/admin/clients/new"
+            className="flex items-center gap-3 rounded-xl border border-zinc-200 bg-white p-5 shadow-sm hover:border-zinc-300 hover:shadow-md transition-all dark:border-zinc-800 dark:bg-zinc-950"
+          >
+            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-zinc-900 text-white text-lg dark:bg-zinc-100 dark:text-zinc-900">
+              +
+            </span>
+            <div>
+              <p className="text-sm font-semibold text-zinc-900 dark:text-zinc-50">Add Client</p>
+              <p className="text-xs text-zinc-500 dark:text-zinc-400">Onboard a new creditor</p>
+            </div>
+          </Link>
+          <Link
+            href="/admin/import"
+            className="flex items-center gap-3 rounded-xl border border-zinc-200 bg-white p-5 shadow-sm hover:border-zinc-300 hover:shadow-md transition-all dark:border-zinc-800 dark:bg-zinc-950"
+          >
+            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-zinc-900 text-white text-lg dark:bg-zinc-100 dark:text-zinc-900">
+              ↑
+            </span>
+            <div>
+              <p className="text-sm font-semibold text-zinc-900 dark:text-zinc-50">Import CSV</p>
+              <p className="text-xs text-zinc-500 dark:text-zinc-400">Bulk import debt portfolios</p>
+            </div>
+          </Link>
+        </div>
       </div>
     </div>
   );

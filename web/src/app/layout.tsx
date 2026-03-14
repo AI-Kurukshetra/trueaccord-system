@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "AI Debt Recovery Platform",
-  description: "Core MVP (Phase 1): authentication and basic UI.",
+  title: "DebtPilot",
+  description: "AI-powered debt recovery and collections platform.",
 };
 
 export default function RootLayout({

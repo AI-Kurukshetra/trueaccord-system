@@ -8,27 +8,22 @@ export default async function LoginPage({
   const { error } = await searchParams;
 
   return (
-    <main className="rounded-2xl border border-zinc-200 bg-white p-8 shadow-sm dark:border-zinc-800 dark:bg-zinc-950">
-      <h1 className="text-xl font-semibold text-zinc-950 dark:text-zinc-50">
-        Log in
-      </h1>
-      <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-300">
-        Use your email and password to access the platform.
+    <main className="rounded-2xl border border-zinc-800 bg-zinc-950 p-8">
+      <h1 className="text-xl font-bold text-white">Welcome back</h1>
+      <p className="mt-1.5 text-sm text-zinc-400">
+        Sign in to your account to continue.
       </p>
 
-      {error ? (
-        <div className="mt-4 rounded-md border border-red-200 bg-red-50 p-3 text-sm text-red-800 dark:border-red-900/50 dark:bg-red-950/30 dark:text-red-200">
+      {error && (
+        <div className="mt-4 rounded-lg border border-red-900/50 bg-red-950/30 p-3 text-sm text-red-300">
           {error}
         </div>
-      ) : null}
+      )}
 
       <form action={login} className="mt-6 space-y-4">
-        <div className="space-y-2">
-          <label
-            htmlFor="email"
-            className="text-sm font-medium text-zinc-900 dark:text-zinc-100"
-          >
-            Email
+        <div className="space-y-1.5">
+          <label htmlFor="email" className="text-sm font-medium text-zinc-300">
+            Email address
           </label>
           <input
             id="email"
@@ -36,14 +31,12 @@ export default async function LoginPage({
             type="email"
             required
             autoComplete="email"
-            className="h-10 w-full rounded-md border border-zinc-200 bg-white px-3 text-sm text-zinc-900 shadow-sm outline-none ring-zinc-900/10 focus:ring-2 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-50"
+            placeholder="you@example.com"
+            className="h-10 w-full rounded-lg border border-zinc-800 bg-zinc-900 px-3 text-sm text-white placeholder-zinc-600 outline-none focus:border-zinc-600 focus:ring-1 focus:ring-zinc-600 transition-colors"
           />
         </div>
-        <div className="space-y-2">
-          <label
-            htmlFor="password"
-            className="text-sm font-medium text-zinc-900 dark:text-zinc-100"
-          >
+        <div className="space-y-1.5">
+          <label htmlFor="password" className="text-sm font-medium text-zinc-300">
             Password
           </label>
           <input
@@ -52,26 +45,25 @@ export default async function LoginPage({
             type="password"
             required
             autoComplete="current-password"
-            className="h-10 w-full rounded-md border border-zinc-200 bg-white px-3 text-sm text-zinc-900 shadow-sm outline-none ring-zinc-900/10 focus:ring-2 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-50"
+            placeholder="••••••••"
+            className="h-10 w-full rounded-lg border border-zinc-800 bg-zinc-900 px-3 text-sm text-white placeholder-zinc-600 outline-none focus:border-zinc-600 focus:ring-1 focus:ring-zinc-600 transition-colors"
           />
         </div>
 
         <button
           type="submit"
-          className="inline-flex h-10 w-full items-center justify-center rounded-md bg-zinc-900 px-4 text-sm font-medium text-white hover:bg-zinc-800 dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-zinc-200"
+          className="mt-2 h-10 w-full rounded-lg bg-white text-sm font-semibold text-black hover:bg-zinc-100 transition-colors"
         >
-          Log in
+          Sign in
         </button>
       </form>
 
-      <p className="mt-6 text-sm text-zinc-600 dark:text-zinc-300">
-        No account?{" "}
-        <a className="font-medium text-zinc-900 hover:underline dark:text-zinc-50" href="/signup">
-          Create one
+      <p className="mt-6 text-center text-sm text-zinc-500">
+        Don&apos;t have an account?{" "}
+        <a className="font-medium text-white hover:underline" href="/signup">
+          Sign up
         </a>
-        .
       </p>
     </main>
   );
 }
-
