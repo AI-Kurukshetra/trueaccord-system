@@ -1,0 +1,10 @@
+.env
+
+# Logs
+*.log
+
+# Python
+__pycache__/
+*.pyc
+*.pdf
+*.md
