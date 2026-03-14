@@ -13,6 +13,9 @@ __pycache__/
 # IDE
 .idea/
 
+# Claude Code
+.claude/
+
 # Next.js build output
 web/.next/
 web/out/
